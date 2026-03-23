@@ -1,21 +1,21 @@
-# Exp.No:3a
-## STRING - FIND AND REPLACE
+# Exp.No:3b  
+## REGEX - PATTERN MATCHING USING REGEX
 
 ---
 
 ### AIM  
-To write a Python function to accept a string, identify a word to be replaced, and replace it with a new word provided by the user.
+To write a Python program that matches a string containing an `'a'` followed by **two to three `'b'` characters** using regular expressions.
 
 ---
 
 ### ALGORITHM
 
 1. Begin the program.  
-2. Input the original string `str1` and the word to be replaced `replace_str`.  
-3. Ask the user to input the new replacement word `str2`.  
-4. Use the `replace()` method in Python to replace all occurrences of `replace_str` in `str1` with `str2`.  
-5. Store the modified string in `str3`.  
-6. Display the original string (`str1`) and the modified string (`str3`).  
+2. Accept a string `str1` from the user.  
+3. Define the regular expression pattern as `r"[a]+b{2,3}"`.  
+4. Use the `re.match()` function to check if the string `str1` matches the pattern.  
+5. If a match is found, print `"Found a match!"`.  
+6. If no match is found, print `"Not matched!"`.  
 7. Terminate the program.
 
 ---
@@ -24,15 +24,21 @@ To write a Python function to accept a string, identify a word to be replaced, a
 
 ```
 
-def joinstring(s):
-    s1 = '-'.join(s)
-    print(s1)
+
+import re
+str = input()
+patterns = 'ab{2,3}?'
+
+if re.search(patterns, str):
+    print("Found a match!")
+else:
+    print("Not matched!")
 
 
 ```
-
 ### OUTPUT
-![image](https://github.com/user-attachments/assets/502d36ef-2cb8-40c1-a0c8-56a66fdac73c)
+![image](https://github.com/user-attachments/assets/92c10b5d-199d-4cf8-ba46-74352aa585aa)
+
 
 ### RESULT
-Thus the program that defines a function to accept a string and join its characters using the hyphen (-) symbol has been implemented and executed successfully.
+Thus the program matches a string containing an 'a' followed by two to three 'b' characters using regular expressions has been implemented and executed successfully.
